@@ -288,7 +288,7 @@ def main():
 
 In each task you will:
 1. Read a **writing prompt**.
-2. Read **two sets of {STORIES_PER_SET} short stories** (System A and System B), each written in response to that prompt.
+2. Read **two sets of {STORIES_PER_SET} short stories** (System A and System B), each written in response to that prompt. Tip: Read all stories from System A then all stories from System B before answering. 
 3. Judge which set is better on **three dimensions** — you must pick one, no ties:
 
 | Dimension | What to consider |
