@@ -9,14 +9,14 @@ import random
 # ============================================================
 # CONFIG
 # ============================================================
-STORIES_PER_SET = 10
-NUM_ANNOTATORS = 10
+STORIES_PER_SET = 5
+NUM_ANNOTATORS = 3
 
 # Prompts 0–69  → single coverage (1 annotator each)
 # Prompts 70–99 → triple coverage (3 annotators each)
 # Total slots: 70×1 + 30×3 = 160 → 16 prompts per annotator
-SINGLE_COVERAGE_END   = 70   # prompts [0, 70) seen by 1 annotator
-TRIPLE_COVERAGE_START = 70   # prompts [70, 100) seen by 3 annotators
+SINGLE_COVERAGE_END   = 40   # prompts [0, 70) seen by 1 annotator
+TRIPLE_COVERAGE_START = 40   # prompts [70, 100) seen by 3 annotators
 ASSIGNMENT_SEED = 42          # change this to reshuffle assignments
 
 COMPARISON_DIMENSIONS = [
