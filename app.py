@@ -334,7 +334,7 @@ In each task you will:
                 "system_a": demo_a, "system_b": demo_b,
                 "system_a_label": "gt", "system_b_label": "model_x",
             }
-            for i in range(100)
+            for i in range(50)
         ]
 
     # ---- Build assignment map ----
