@@ -12,12 +12,20 @@ import random
 STORIES_PER_SET = 5
 NUM_ANNOTATORS = 3
 
-# Prompts 0–69  → single coverage (1 annotator each)
-# Prompts 70–99 → triple coverage (3 annotators each)
-# Total slots: 70×1 + 30×3 = 160 → 16 prompts per annotator
-SINGLE_COVERAGE_END   = 40   # prompts [0, 70) seen by 1 annotator
-TRIPLE_COVERAGE_START = 40   # prompts [70, 100) seen by 3 annotators
-ASSIGNMENT_SEED = 42          # change this to reshuffle assignments
+# Prompts 0–39  → single coverage (1 annotator each)
+# Prompts 40–49 → triple coverage (3 annotators each)
+# Pool: 40 + 10×3 = 70 slots. Trimmed to 69 (divisible by 3)
+# so each annotator gets exactly 23 tasks with no remainder.
+SINGLE_COVERAGE_END   = 40
+TRIPLE_COVERAGE_START = 40
+ASSIGNMENT_SEED = 42
+
+# Remap computed chunk index → annotator ID so that:
+#   annotator 1 starts with prompt 15
+#   annotator 2 starts with prompt 11
+#   annotator 3 starts with prompt 12
+# (matches round-1 assignments)
+SLOT_TO_ANNOTATOR = {"0": "1", "1": "2", "2": "3"}
 
 COMPARISON_DIMENSIONS = [
     {
@@ -55,13 +63,13 @@ def build_assignment_map(num_prompts):
     """
     Returns dict: annotator_id (str) -> list of prompt indices (ints).
 
-    Single-coverage prompts appear once in the slot pool.
-    Triple-coverage prompts appear three times.
-    The pool is shuffled with a fixed seed then split evenly across annotators.
-    Result: 16 prompts per annotator, every prompt covered the right number of times.
+    Builds the same pool as round 1 (seed=42, single=[0,40), triple=[40,50))
+    giving 70 slots. Trims to 69 so all three annotators get exactly 23 tasks
+    with no remainder. Deduplicates each chunk to avoid showing any prompt twice.
+    SLOT_TO_ANNOTATOR remaps chunk order to annotator IDs to match round-1 assignments.
     """
     single_prompts = list(range(SINGLE_COVERAGE_END))
-    triple_prompts = list(range(TRIPLE_COVERAGE_START, num_prompts))
+    triple_prompts = list(range(TRIPLE_COVERAGE_START, 50))
 
     slots = single_prompts[:]
     for p in triple_prompts:
@@ -69,10 +77,25 @@ def build_assignment_map(num_prompts):
 
     rng = random.Random(ASSIGNMENT_SEED)
     rng.shuffle(slots)
+    slots = slots[:69]  # trim 1 remainder slot so 69 / 3 = 23 exactly
 
-    chunk = len(slots) // NUM_ANNOTATORS
+    chunk = 23
+    computed = {
+        str(i): slots[i * chunk: (i + 1) * chunk]
+        for i in range(NUM_ANNOTATORS)
+    }
+
+    def dedup_ordered(seq):
+        seen = set()
+        result = []
+        for x in seq:
+            if x not in seen:
+                seen.add(x)
+                result.append(x)
+        return result
+
     return {
-        str(i + 1): slots[i * chunk: (i + 1) * chunk]
+        SLOT_TO_ANNOTATOR[str(i)]: dedup_ordered(computed[str(i)])
         for i in range(NUM_ANNOTATORS)
     }
 
@@ -82,19 +105,6 @@ def build_assignment_map(num_prompts):
 # ============================================================
 @st.cache_data
 def load_data():
-    """
-    Expected JSON — list of prompt objects:
-    [
-      {
-        "prompt": "Write a story about...",
-        "system_a": ["story1", ...],   <- STORIES_PER_SET items
-        "system_b": ["story1", ...],
-        "system_a_label": "gt",        <- backend label, hidden from annotators
-        "system_b_label": "model_x"
-      },
-      ...
-    ]
-    """
     with open(DATA_FILE, "r") as f:
         return json.load(f)
 
@@ -158,15 +168,13 @@ def empty_annotation(prompt_index, annotator_id, prompt_data):
     order = get_display_order(annotator_id, prompt_index)
     raw_a = prompt_data.get("system_a_label", "system_a")
     raw_b = prompt_data.get("system_b_label", "system_b")
-    # system_a_label/system_b_label store what the annotator ACTUALLY SAW
-    # in each column. When flipped, the two systems swap columns.
     shown_as_a, shown_as_b = (raw_a, raw_b) if order == "normal" else (raw_b, raw_a)
     return {
         "prompt_index": prompt_index,
         "prompt": prompt_data["prompt"],
         "display_order": order,
-        "system_a_label": shown_as_a,  # what was in the System A column
-        "system_b_label": shown_as_b,  # what was in the System B column
+        "system_a_label": shown_as_a,
+        "system_b_label": shown_as_b,
         "judgements": {dim["key"]: None for dim in COMPARISON_DIMENSIONS},
         "comments": "",
     }
@@ -215,11 +223,6 @@ def render_judgements(page_key, ann):
     st.markdown("## ✍️ Your Judgements")
     st.caption("Pick which set performed better on each dimension. You must choose one — no ties.")
 
-    # Judgements are stored simply as "system_a" or "system_b" meaning
-    # the annotator picked the System A or System B column respectively.
-    # system_a_label / system_b_label in the annotation already record
-    # which real system (e.g. llama_ft or baco) was in each column,
-    # so no further decoding is needed at analysis time.
     opts = ["System A", "System B"]
 
     for dim in COMPARISON_DIMENSIONS:
@@ -227,7 +230,6 @@ def render_judgements(page_key, ann):
         st.caption(dim["description"])
 
         stored = ann["judgements"].get(dim["key"])
-        # stored is "system_a", "system_b", or None — maps 1:1 to column label
         if stored == "system_a":
             stored_display = "System A"
         elif stored == "system_b":
@@ -338,7 +340,7 @@ In each task you will:
         ]
 
     # ---- Build assignment map ----
-    assignment_map  = build_assignment_map(len(data))
+    assignment_map   = build_assignment_map(len(data))
     assigned_indices = assignment_map[annotator_id]
     total_pages      = len(assigned_indices)
 
@@ -375,8 +377,6 @@ In each task you will:
     ann   = st.session_state.all_annotations[prompt_index]
     order = ann["display_order"]
 
-    # Labels are always System A (left) and System B (right).
-    # Only the underlying stories swap — system_b data shows under "System A" when flipped.
     left_label, right_label = "System A", "System B"
     if order == "normal":
         left_stories, right_stories = prompt_data["system_a"], prompt_data["system_b"]
