@@ -18,7 +18,8 @@ NUM_ANNOTATORS = 3
 # so each annotator gets exactly 23 tasks with no remainder.
 SINGLE_COVERAGE_END   = 40
 TRIPLE_COVERAGE_START = 40
-ASSIGNMENT_SEED = 42
+# ASSIGNMENT_SEED = 42
+ASSIGNMENT_SEED = 99 
 
 # Remap computed chunk index → annotator ID so that:
 #   annotator 1 starts with prompt 15
@@ -261,8 +262,6 @@ def render_judgements(page_key, ann):
         key=f"comments_{page_key}",
         height=100,
     )
-
-
 # ============================================================
 # MAIN
 # ============================================================
