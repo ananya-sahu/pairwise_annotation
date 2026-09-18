@@ -383,7 +383,7 @@ def main():
     session_id   = query_params.get("session", "")
 
     if annotator_id not in VALID_ANNOTATOR_IDS:
-        annotator_id = st.text_input(f"Enter your Annotator ID (1{NUM_ANNOTATORS})")
+        annotator_id = st.text_input(f"Enter your Annotator ID (1-{NUM_ANNOTATORS})")
         if annotator_id not in VALID_ANNOTATOR_IDS:
             if annotator_id:
                 st.error(f"Invalid ID. Must be one of: {', '.join(VALID_ANNOTATOR_IDS)}")
