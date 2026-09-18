@@ -220,7 +220,7 @@ def render_story_card(label, story_text, bg_color, border_color):
 
 def render_judgements(page_key, ann):
     st.markdown("---")
-    st.markdown("##Your Judgements")
+    st.markdown("## Your Judgements")
     if TIE_OPTION:
         st.caption("Pick which story performed better on each dimension, or choose Same if you can't tell them apart.")
     else:
@@ -542,7 +542,7 @@ def main():
 
     # ---- Submit ----
     if is_last:
-        st.markdown("###Ready to submit?")
+        st.markdown("### Ready to submit?")
         if st.button("Submit All Annotations", type="primary", use_container_width=True):
             all_complete = True
             for i in range(total_pages):
