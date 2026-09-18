@@ -542,7 +542,7 @@ def main():
 
     # ---- Submit ----
     if is_last:
-        st.markdown("### \ud83c\udfc1 Ready to submit?")
+        st.markdown("###Ready to submit?")
         if st.button("\u2705 Submit All Annotations", type="primary", use_container_width=True):
             all_complete = True
             for i in range(total_pages):
