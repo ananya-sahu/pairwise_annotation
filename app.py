@@ -220,11 +220,11 @@ def render_story_card(label, story_text, bg_color, border_color):
 
 def render_judgements(page_key, ann):
     st.markdown("---")
-    st.markdown("## \u270d\ufe0f Your Judgements")
+    st.markdown("##Your Judgements")
     if TIE_OPTION:
         st.caption("Pick which story performed better on each dimension, or choose Same if you can't tell them apart.")
     else:
-        st.caption("Pick which story performed better on each dimension. You must choose one \u2014 no ties.")
+        st.caption("Pick which story performed better on each dimension. You must choose one no ties.")
 
     opts = ["Story A", "Story B"] + (["Same"] if TIE_OPTION else [])
 
@@ -383,7 +383,7 @@ def main():
     session_id   = query_params.get("session", "")
 
     if annotator_id not in VALID_ANNOTATOR_IDS:
-        annotator_id = st.text_input(f"Enter your Annotator ID (1\u2013{NUM_ANNOTATORS})")
+        annotator_id = st.text_input(f"Enter your Annotator ID (1{NUM_ANNOTATORS})")
         if annotator_id not in VALID_ANNOTATOR_IDS:
             if annotator_id:
                 st.error(f"Invalid ID. Must be one of: {', '.join(VALID_ANNOTATOR_IDS)}")
@@ -396,15 +396,15 @@ def main():
 
     c1, c2 = st.columns(2)
     c1.info(f"**Annotator ID:** {annotator_id}")
-    c2.info(f"**Session ID:** `{session_id}` \u2014 bookmark this URL to resume after a crash")
+    c2.info(f"**Session ID:** `{session_id}` bookmark this URL to resume after a crash")
 
     # ---- Load data ----
     try:
         data = load_data()
     except FileNotFoundError:
-        st.warning("\u26a0\ufe0f Data file not found. Showing demo data.")
-        demo_a = [f"System A \u2014 Story {i+1}: Lorem ipsum dolor sit amet." for i in range(STORIES_PER_SET)]
-        demo_b = [f"System B \u2014 Story {i+1}: Sed ut perspiciatis unde omnis." for i in range(STORIES_PER_SET)]
+        st.warning(" Data file not found. Showing demo data.")
+        demo_a = [f"System A Story {i+1}: Lorem ipsum dolor sit amet." for i in range(STORIES_PER_SET)]
+        demo_b = [f"System B Story {i+1}: Sed ut perspiciatis unde omnis." for i in range(STORIES_PER_SET)]
         data = [
             {
                 "prompt": f"Demo prompt {i+1}: Write a story about something unexpected.",
@@ -419,13 +419,13 @@ def main():
         assignment_map = load_assignment_map()
     except FileNotFoundError:
         st.error(
-            f"\u274c Assignment file `{ASSIGNMENT_FILE}` not found. "
+            f"Assignment file `{ASSIGNMENT_FILE}` not found. "
             "Run `python app.py export` to generate it first."
         )
         st.stop()
 
     if annotator_id not in assignment_map:
-        st.error(f"\u274c Annotator ID `{annotator_id}` not found in `{ASSIGNMENT_FILE}`.")
+        st.error(f"Annotator ID `{annotator_id}` not found in `{ASSIGNMENT_FILE}`.")
         st.stop()
 
     assigned_items = assignment_map[annotator_id]
@@ -448,7 +448,7 @@ def main():
                     resumed_page = i
                     break
             st.session_state.page = resumed_page
-            st.success(f"\u2705 Progress restored! Resuming at Task {resumed_page + 1} of {total_pages}.")
+            st.success(f"Progress restored! Resuming at Task {resumed_page + 1} of {total_pages}.")
         else:
             st.session_state.page = 0
 
@@ -482,7 +482,7 @@ def main():
         ">
             <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px;
                 color:#e9a84c; font-family:'DM Sans',sans-serif;">
-                Prompt \u2014 Task {current_page + 1}
+                Prompt Task {current_page + 1}
             </span><br><br>
             {prompt_data["prompt"]}
         </div>""",
@@ -543,11 +543,11 @@ def main():
     # ---- Submit ----
     if is_last:
         st.markdown("###Ready to submit?")
-        if st.button("\u2705 Submit All Annotations", type="primary", use_container_width=True):
+        if st.button("Submit All Annotations", type="primary", use_container_width=True):
             all_complete = True
             for i in range(total_pages):
                 if i not in st.session_state.all_annotations:
-                    st.error(f"Task {i + 1} has not been completed \u2014 please go back and fill it in.")
+                    st.error(f"Task {i + 1} has not been completed please go back and fill it in.")
                     all_complete = False
                     continue
                 a = st.session_state.all_annotations[i]
@@ -561,7 +561,7 @@ def main():
                 try:
                     save_annotations(annotator_id, session_id,
                                      st.session_state.all_annotations)
-                    st.success("\u2705 All annotations saved! Thank you!")
+                    st.success("All annotations saved! Thank you!")
                     st.balloons()
                 except Exception as e:
                     st.error(
