@@ -1,72 +1,908 @@
 {
   "1": [
-    15,
-    10,
-    18,
-    45,
-    44,
-    19,
-    27,
-    40,
-    43,
-    7,
-    48,
-    32,
-    3,
-    4,
-    35,
-    47,
-    49,
-    46,
-    14,
-    2
+    {
+      "prompt": 73,
+      "story_idx_a": 4,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 4,
+      "story_idx_a": 4,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 8,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 14,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 72,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 28,
+      "story_idx_a": 0,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 26,
+      "story_idx_a": 1,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 69,
+      "story_idx_a": 2,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 61,
+      "story_idx_a": 2,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 18,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 52,
+      "story_idx_a": 2,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 54,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 86,
+      "story_idx_a": 0,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 65,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 46,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 83,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 39,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 42,
+      "story_idx_a": 0,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 82,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 77,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 74,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 92,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 20,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 41,
+      "story_idx_a": 2,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 90,
+      "story_idx_a": 0,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 57,
+      "story_idx_a": 1,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 7,
+      "story_idx_a": 4,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 21,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 56,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 81,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 44,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 6,
+      "story_idx_a": 2,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 96,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 24,
+      "story_idx_a": 2,
+      "story_idx_b": 1,
+      "shared": true
+    },
+    {
+      "prompt": 93,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 37,
+      "story_idx_a": 3,
+      "story_idx_b": 1,
+      "shared": true
+    },
+    {
+      "prompt": 70,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 50,
+      "story_idx_a": 4,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 66,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 2,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 15,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 16,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 71,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 45,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 30,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 58,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 9,
+      "story_idx_a": 0,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 1,
+      "story_idx_a": 3,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 36,
+      "story_idx_a": 4,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 98,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": true
+    }
   ],
   "2": [
-    28,
-    42,
-    6,
-    40,
-    0,
-    47,
-    8,
-    1,
-    49,
-    20,
-    30,
-    38,
-    45,
-    44,
-    21,
-    36,
-    11,
-    48,
-    9,
-    41,
-    46,
-    23,
-    13
+    {
+      "prompt": 20,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 24,
+      "story_idx_a": 2,
+      "story_idx_b": 1,
+      "shared": true
+    },
+    {
+      "prompt": 44,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 95,
+      "story_idx_a": 4,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 85,
+      "story_idx_a": 0,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 82,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 12,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 18,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 35,
+      "story_idx_a": 3,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 15,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 60,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 34,
+      "story_idx_a": 1,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 96,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 83,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 38,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 57,
+      "story_idx_a": 1,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 40,
+      "story_idx_a": 4,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 58,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 37,
+      "story_idx_a": 3,
+      "story_idx_b": 1,
+      "shared": true
+    },
+    {
+      "prompt": 19,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 59,
+      "story_idx_a": 0,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 71,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 63,
+      "story_idx_a": 4,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 66,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 94,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 13,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 0,
+      "story_idx_a": 1,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 41,
+      "story_idx_a": 2,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 77,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 98,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 5,
+      "story_idx_a": 0,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 23,
+      "story_idx_a": 3,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 33,
+      "story_idx_a": 2,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 55,
+      "story_idx_a": 3,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 99,
+      "story_idx_a": 1,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 21,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 64,
+      "story_idx_a": 0,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 84,
+      "story_idx_a": 1,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 50,
+      "story_idx_a": 4,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 3,
+      "story_idx_a": 0,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 6,
+      "story_idx_a": 2,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 93,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 10,
+      "story_idx_a": 2,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 88,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 16,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 14,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 39,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 92,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 43,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 65,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": true
+    }
   ],
   "3": [
-    37,
-    44,
-    46,
-    26,
-    12,
-    48,
-    39,
-    47,
-    34,
-    41,
-    33,
-    24,
-    42,
-    16,
-    5,
-    49,
-    17,
-    31,
-    29,
-    22,
-    25
+    {
+      "prompt": 78,
+      "story_idx_a": 1,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 41,
+      "story_idx_a": 2,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 14,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 51,
+      "story_idx_a": 2,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 32,
+      "story_idx_a": 2,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 49,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 83,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 80,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 39,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 24,
+      "story_idx_a": 2,
+      "story_idx_b": 1,
+      "shared": true
+    },
+    {
+      "prompt": 68,
+      "story_idx_a": 4,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 25,
+      "story_idx_a": 1,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 67,
+      "story_idx_a": 1,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 62,
+      "story_idx_a": 2,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 37,
+      "story_idx_a": 3,
+      "story_idx_b": 1,
+      "shared": true
+    },
+    {
+      "prompt": 31,
+      "story_idx_a": 1,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 76,
+      "story_idx_a": 2,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 79,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 87,
+      "story_idx_a": 1,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 58,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 97,
+      "story_idx_a": 0,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 6,
+      "story_idx_a": 2,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 22,
+      "story_idx_a": 4,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 29,
+      "story_idx_a": 3,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 57,
+      "story_idx_a": 1,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 71,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 89,
+      "story_idx_a": 1,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 20,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 65,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 50,
+      "story_idx_a": 4,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 66,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 53,
+      "story_idx_a": 1,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 92,
+      "story_idx_a": 3,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 16,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 11,
+      "story_idx_a": 0,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 98,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": true
+    },
+    {
+      "prompt": 48,
+      "story_idx_a": 2,
+      "story_idx_b": 3,
+      "shared": false
+    },
+    {
+      "prompt": 96,
+      "story_idx_a": 3,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 21,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 77,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 18,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 27,
+      "story_idx_a": 3,
+      "story_idx_b": 1,
+      "shared": false
+    },
+    {
+      "prompt": 47,
+      "story_idx_a": 2,
+      "story_idx_b": 0,
+      "shared": false
+    },
+    {
+      "prompt": 93,
+      "story_idx_a": 0,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 44,
+      "story_idx_a": 3,
+      "story_idx_b": 0,
+      "shared": true
+    },
+    {
+      "prompt": 15,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": true
+    },
+    {
+      "prompt": 17,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": false
+    },
+    {
+      "prompt": 91,
+      "story_idx_a": 4,
+      "story_idx_b": 2,
+      "shared": false
+    },
+    {
+      "prompt": 82,
+      "story_idx_a": 1,
+      "story_idx_b": 4,
+      "shared": true
+    },
+    {
+      "prompt": 75,
+      "story_idx_a": 4,
+      "story_idx_b": 0,
+      "shared": false
+    }
   ]
 }
